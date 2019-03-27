@@ -1,0 +1,9 @@
+<li>
+    {{burger_name}}
+
+	<button class="change-condition" data-id="{{id}}" data-newcondition="{{devoured}}">
+		{{#if devoured}}Devoured It!{{else}}Order It!{{/if}}
+	</button>
+
+	<button class="delete" data-id="{{this.id}}">DELETE!</button>
+</li>

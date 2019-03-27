@@ -1,0 +1,29 @@
+<div class='row'>
+    <div class="col">
+        
+        <h3>Burgers ready to be devoured!
+            <ul>
+                {{#each burgers}}
+                    {{#unless this.devoured}}
+
+                    <li>{{this.burger_name}}</li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </h3>
+    </div>  
+
+    <div class="col">
+        <h3>Burgers already devoured!
+            <ul>
+                {{#each burgers}}
+                {{!-- if this burg is devoured then display --}}
+                    {{#if this.devoured}}
+                    <li>{{this.burger_name}}</li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </h3>
+    </div>
+    
+</div>

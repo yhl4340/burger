@@ -1,0 +1,60 @@
+{{!-- Inside your burger directory, create a folder named views.
+
+
+
+Create the index.handlebars file inside views directory.
+
+Create the layouts directory inside views directory.
+
+
+Create the main.handlebars file inside layouts directory.
+Setup the main.handlebars file so it's able to be used by Handlebars.
+Setup the index.handlebars to have the template that Handlebars can render onto.
+Create a button in index.handlebars that will submit the user input into the database. --}}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	{{!-- <meta charset="UTF-8">
+		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" /> --}}
+	<title>Eat da burger!</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/burger_style.css" />
+<script src="/assets/js/burgers.js"></script>
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<h1>Eat da Burger!!</h1>
+		</div>
+		<div class="row align-items-center">
+			{{!-- still confused about the file path --}}
+			<img src="/assets/img/th.jpg"></a>
+		</div>
+
+		<form>
+			<div class="form-group">
+				<label for="burger">Add a burger</label>
+				<input type="text" class="form-control" id="newinput">
+				<button id='addBurger' class='btn btn-primary' type='submit'>Add a burger!!!</button>
+			</div>
+		</form>
+
+
+		<div>
+			{{{ body }}}
+		</div>
+
+
+	</div>
+	<script src="../assets/js/burgers.js"></script>
+</body>
+
+</html>
