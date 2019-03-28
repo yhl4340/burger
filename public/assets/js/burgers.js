@@ -18,20 +18,21 @@ $(document).ready(function () {
 
     });
 
-    $('.eat').on('click', function (event) {
+    $('.devoured').on('click', function (event) {
         event.preventDefault();
         var id = $(this).data('id');
-        var newcondition = $(this).data('devoured');
+        var newcondition = $(this).data('newcondition');
         var newconditionState = {
             devoured: newcondition
         };
         console.log('id:', id);
 
-        $.put('/api/burgers/' + id, {
-            type: 'PUT',
+        $.ajax('/api/burgers/' + id, {
+            type: 'DELETE',
             data:newconditionState
-        }).then(function (dataToo) {
-            console.log(dataToo, 'updated devoured state');
+    
+        }).then(function () {
+            console.log('updated devoured state', data);
             location.reload();
 
         })

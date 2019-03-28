@@ -20,7 +20,7 @@ router.get("/", function(request, resp) {
   burger.all(function(data) {
     var hbsObj = {
       burgers: data,
-      devoured:false
+      // devoured:false
     };
     // console.log('all:', JSON.stringify(data));
     // rendering the data via handlebars

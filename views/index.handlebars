@@ -20,7 +20,7 @@
                     {{#unless devoured}}
 
                     <li>{{this.burger_name}}</li>
-                    {{!-- {{> burgers/burger-block}} --}}
+                    {{> burgers/burger-block devoured=false}}
                     
                     {{/unless}}
                 {{/each}}
@@ -34,8 +34,8 @@
                 {{#each burgers}}
                 {{!-- if this burger is devoured then display --}}
                     {{#if devoured}}
-                    <li>{{id}}. {{this.burger_name}}</li>
-                    {{!-- {{ burgers/burger-block devoured= true}} --}}
+                    {{!-- <li>{{id}}. {{this.burger_name}}</li> --}}
+                    {{> burgers/burger-block devoured= true}}
                     {{/if}}
                 {{/each}}
             </ul>

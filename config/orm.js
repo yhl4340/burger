@@ -29,7 +29,9 @@ var orm = {
         connection.query('insert into burgers set ?',
         {
             // wasn't console loggint out name of burger because i had passed in the obj 'burger_name:burgerName
-            burger_name:burgerObject.burger_name
+            burger_name:burgerObject.burger_name,
+            // need to keep this devoured pro to console log to work bench
+            devoured:false
         },function(err,resp){
             if(err) throw err;
             callB(resp);
