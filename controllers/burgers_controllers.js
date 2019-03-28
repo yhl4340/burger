@@ -19,7 +19,8 @@ router.get("/", function(request, resp) {
   //   using the burger.all method and passing data as the argv
   burger.all(function(data) {
     var hbsObj = {
-      burgers: data
+      burgers: data,
+      devoured:false
     };
     // console.log('all:', JSON.stringify(data));
     // rendering the data via handlebars
