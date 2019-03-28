@@ -27,13 +27,17 @@ $(document).ready(function () {
         };
         console.log('id:', id);
 
-        $.ajax('/api/burgers/' + id, {
-            type: 'DELETE',
-            data:newconditionState
+        // $.ajax('/api/burgers/' + id, {
+        //     type: 'DELETE',
+        //     data:newconditionState
     
-        }).then(function () {
-            console.log('updated devoured state', data);
-            location.reload();
+        // }).then(function () {
+            $.ajax({
+                method: "PUT",
+                url: '/api/burgers/' + id
+              }).then(function(data) {
+                  console.log('updated devoured state', data);
+                  location.reload();
 
         })
     })

@@ -1,12 +1,14 @@
-<li>
+<div>
     {{burger_name}}
 
 	
-		{{#unless devoured}}Devoure It!
-		<button class='devoured' data-id="{{id}}" data-newcondition="{{devoured}}">
-
+		{{!-- {{#unless devoured}}Devoure It!
+		<button type='button' class='devoured' data-id="{{id}}" data-newcondition="{{devoured}}"> --}}
+	{{#unless devoured}}
+		<button class='btn devoured' data-id="{{id}}">
+      Devoure It!
 		</button>
 		{{/unless}}
 	
 
-</li>
+</div>

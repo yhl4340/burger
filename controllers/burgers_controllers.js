@@ -35,25 +35,33 @@ router.post("/api/burgers", function(reqSent, rly) {
   });
 });
 
-router.put("/api/burgers/:id", function (req, re) {
-    var condition = req.params.id + "id";
-    console.log("condition", condition);
-    burger.update(
-        {
-            devoured: true
-        },
-        condition,
-        function (data) {
-            if (data.changedRows == 0) {
-                re.redirect("/index");
-                console.log("update", data);
 
-                return re.status(404).end();
-            } else {
-                re.status(200).end();
-            }
-        }
-    );
+router.put("/api/burgers/:id", function(req, res) {
+  burger.update(req.params.id, function(result) {
+    console.log(result);
+    res.sendStatus(200);
+  });
+
+
+// router.put("/api/burgers/:id", function (req, re) {
+//     var condition = req.params.id + "id";
+//     console.log("condition", condition);
+//     burger.update(
+//         {
+//             devoured: true
+//         },
+//         condition,
+//         function (data) {
+//             if (data.changedRows == 0) {
+//                 re.redirect("/index");
+//                 console.log("update", data);
+
+//                 return re.status(404).end();
+//             } else {
+//                 re.status(200).end();
+//             }
+//         }
+//     );
 });
 
 

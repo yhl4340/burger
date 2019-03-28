@@ -26,10 +26,15 @@ var burger = {
             cb(res);
         })
     },
-    update: function(burgerId,cb){
-        orm.update(burgerId, function(resp){
-            cb(resp)
-        })
-    } 
+    update: function(burgerId, cb){
+        var condition = {id: burgerId};
+        var devoured = {devoured: true};
+          orm.update("burgers", devoured, condition, cb);
+      }
+    // update: function(burgerId,cb){
+    //     orm.update(burgerId, function(resp){
+    //         cb(resp)
+    //     })
+    // } 
 }
 module.exports = burger;
