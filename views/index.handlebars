@@ -1,6 +1,6 @@
 
     {{!-- <div class="col-3 offset-md-5">
-        
+
         <form>
 			<div class="form-group">
 				<label for="burger">Add a burger</label>
@@ -12,21 +12,18 @@
 
     <div class="row">
         <div class="col">
-    
+
         <h3>Burgers ready to be devoured!
             <ul>
                 {{#each burgers}}
                 {{!-- if this burger is not devoured, display --}}
                     {{#unless devoured}}
-
-                    <li>{{this.burger_name}}</li>
-                    {{> burgers/burger-block devoured=false}}
-                    
+                      {{> burgers/burger-block devoured=false}}
                     {{/unless}}
                 {{/each}}
             </ul>
         </h3>
-    </div>  
+    </div>
 
     <div class="col">
         <h3>Burgers already devoured!
@@ -35,10 +32,10 @@
                 {{!-- if this burger is devoured then display --}}
                     {{#if devoured}}
                     {{!-- <li>{{id}}. {{this.burger_name}}</li> --}}
-                    {{> burgers/burger-block devoured= true}}
+                      {{> burgers/burger-block devoured= true}}
                     {{/if}}
                 {{/each}}
             </ul>
         </h3>
-    </div> 
+    </div>
 </div>

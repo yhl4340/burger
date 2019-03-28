@@ -1,3 +1,4 @@
+
 create database burgers_db;
 use burgers_db;
 

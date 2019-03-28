@@ -15,21 +15,21 @@
 var orm = require('../config/orm.js');
 
 var burger = {
-    all: function(cb){
-        orm.all('burgers', function(res){
-            cb(res);
-        })
-    }, 
-    insert:function(burgerName, cb){
-        console.log('burgerInsert:', burgerName)
-        orm.insert(burgerName, function(res){
-            cb(res);
-        })
-    },
-    update: function(burgerId,cb){
-        orm.update(burgerId, function(resp){
-            cb(resp)
-        })
-    } 
+  all: function(cb){
+    orm.all('burgers', function(res){
+      cb(res);
+    })
+  },
+  insert:function(burgerName, cb){
+    orm.insert(burgerName, function(res){
+        cb(res);
+    })
+  },
+  update: function(burgerId, cb){
+    var condition = {id: burgerId};
+    var devoured = {devoured: true};
+      orm.update("burgers", devoured, condition, cb);
+  }
 }
+
 module.exports = burger;

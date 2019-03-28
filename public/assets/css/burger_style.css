@@ -10,3 +10,11 @@ img {
 .form-group{
     text-align: center;
 }
+
+.devoured {
+  background-color: #6eb567;
+  color: white;
+}
+.devoured:hover {
+  background-color: #62915d;
+}
