@@ -30,28 +30,20 @@ var orm = {
         {
             // wasn't console loggint out name of burger because i had passed in the obj 'burger_name:burgerName
             burger_name:burgerObject.burger_name,
-            // need to keep this devoured pro to console log to work bench
-            devoured:false
         },function(err,resp){
             if(err) throw err;
             callB(resp);
         });
     },
-    // update
 
-    update: function(burgId,condition, cb){
-        connection.query('update burgers set? where?',
-        {
-            id:burgId
-        },
-        {
-            devoured: true
-        },function(err,res){
-            if(err) throw err
-            cb(res)
-        })
-        console.log(res.affectedRows, 'test')
+    // update
+    update: function(table, objVals, condition, cb) {
+      connection.query(`update ${table} set ? where ?`, [objVals, condition],
+        function(err,result){
+          if(err) throw err;
+          cb(result);
+      });
     }
-}
+};
 
 module.exports= orm;
