@@ -21,6 +21,7 @@ var burger = {
         })
     }, 
     insert:function(burgerName, cb){
+        console.log('burgerInsert:', burgerName)
         orm.insert(burgerName, function(res){
             cb(res);
         })

@@ -24,11 +24,12 @@ var orm = {
         })
     },
     // insert
-    insert: function(burgName, callB){
+    insert: function(burgerObject, callB){
+        console.log('orm:', burgerObject)
         connection.query('insert into burgers set ?',
         {
-            name:burgName,
-            devoured:false,
+            // wasn't console loggint out name of burger because i had passed in the obj 'burger_name:burgerName
+            burger_name:burgerObject.burger_name
         },function(err,resp){
             if(err) throw err;
             callB(resp);

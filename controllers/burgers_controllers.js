@@ -15,25 +15,22 @@ var router = express.Router();
 
 var burger = require("../models/burger.js");
 
-// router.get("/", function (req, res) {
-//     res.redirect('/index');
-// });
-
 router.get("/", function(request, resp) {
   //   using the burger.all method and passing data as the argv
   burger.all(function(data) {
     var hbsObj = {
       burgers: data
     };
-    console.log(hbsObj, "burgs obj", data);
+    // console.log('all:', JSON.stringify(data));
     // rendering the data via handlebars
     resp.render("index", hbsObj);
   });
 });
 
 router.post("/api/burgers", function(reqSent, rly) {
-  burger.insert(reqSent.body.burgName, function() {
-    rly.redirect("/index");
+  console.log('data:', reqSent.body);
+  burger.insert(reqSent.body, function() {
+    rly.redirect("/");
   });
 });
 

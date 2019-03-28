@@ -4,20 +4,23 @@
         <h3>Burgers ready to be devoured!
             <ul>
                 {{#each burgers}}
+                {{!-- if this burger is not devoured, display --}}
                     {{#unless this.devoured}}
 
                     <li>{{this.burger_name}}</li>
+                    
                     {{/unless}}
                 {{/each}}
             </ul>
         </h3>
+        <button class='' >DELETE!</button>
     </div>  
 
     <div class="col">
         <h3>Burgers already devoured!
             <ul>
                 {{#each burgers}}
-                {{!-- if this burg is devoured then display --}}
+                {{!-- if this burger is devoured then display --}}
                     {{#if this.devoured}}
                     <li>{{this.burger_name}}</li>
                     {{/if}}
