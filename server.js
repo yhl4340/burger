@@ -1,5 +1,5 @@
 var express = require("express");
-var port = process.env.port || 8081;
+var PORT = process.env.PORT || 8081;
 var routes = require("./controllers/burgers_controllers");
 var app = express();
 // middle ware to pare info and encode the url
@@ -18,6 +18,6 @@ app.set("view engine", "handlebars");
 
 app.use(routes);
 
-app.listen(port, function() {
-  console.log("port listening: http://localhost:" + port);
+app.listen(PORT, function() {
+  console.log("port listening: http://localhost:" + PORT);
 });

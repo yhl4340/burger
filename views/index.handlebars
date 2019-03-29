@@ -10,7 +10,7 @@
                 {{!-- if this burger is not devoured, display --}}
                     {{#unless devoured}}
 
-                    <li>{{this.burger_name}}</li>
+                    {{!-- <li>{{this.burger_name}}</li> --}}
                     {{> burgers/burger-block devoured=false}}
                     
                     {{/unless}}
