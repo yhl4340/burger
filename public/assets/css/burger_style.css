@@ -1,3 +1,7 @@
+* {
+    font-family: 'Baloo Chettan', cursive;
+}
+
 h1 {
     text-align: center;
 }
@@ -13,7 +17,9 @@ img {
 }
 li {
     font-size:22px;
+    font-weight: lighter;
 }
 input {
     margin:0 auto;
+
 }
