@@ -6,8 +6,8 @@ Each burger in the waiting area also has a Devour it! button. When the user clic
 Your app will store every burger in a database, whether devoured or not.
 
 ## Goal-
--- [x] set up folders for config, db, model, controller, and    view.
--- [x] create directory structure as shown in instruction. 
--- [x] app captures and display user input in browser
--- [x] each burger generated has a devoure button
--- [x] on click of the devoure button, the burger will move     to the right side of the page. 
+* - [x] set up folders for config, db, model, controller,           and view.
+* - [x] create directory structure as shown in instruction. 
+* - [x] app captures and display user input in browser
+* - [x] each burger generated has a devoure button
+* - [x] on click of the devoure button, the burger will move     to the right side of the page. 
