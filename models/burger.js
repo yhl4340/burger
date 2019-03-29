@@ -21,15 +21,16 @@ var burger = {
         })
     }, 
     insert:function(burgerName, cb){
-        console.log('burgerInsert:', burgerName)
+        
         orm.insert(burgerName, function(res){
             cb(res);
         })
     },
     update: function(burgerId,cb){
-        orm.update(burgerId, function(resp){
-            cb(resp)
-        })
+        var condition = {id:burgerId};
+        var devoured = {devoured:true}
+        orm.update('burgers',devoured, condition, cb)
+        }
     } 
-}
+
 module.exports = burger;

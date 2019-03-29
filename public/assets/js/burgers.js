@@ -21,17 +21,17 @@ $(document).ready(function () {
     $('.devoured').on('click', function (event) {
         event.preventDefault();
         var id = $(this).data('id');
-        var newcondition = $(this).data('newcondition');
-        var newconditionState = {
-            devoured: newcondition
-        };
-        console.log('id:', id);
+        // var newcondition = $(this).data('newcondition');
+        // var newconditionState = {
+        //     devoured: newcondition
+        // };
+        // console.log('id:', id);
 
-        $.ajax('/api/burgers/' + id, {
-            type: 'DELETE',
-            data:newconditionState
+        $.ajax({
+            method: 'PUT',
+            url: '/api/burgers/' + id
+        }).then(function(data) {
     
-        }).then(function () {
             console.log('updated devoured state', data);
             location.reload();
 

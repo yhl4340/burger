@@ -25,7 +25,7 @@ var connection = mysql.createConnection(
 );
 connection.connect(function(err){
     if(err) {
-        console.log('Error:');
+        console.error('Error:');
     }
     console.log('connected id: '+ connection.threadId)
 });

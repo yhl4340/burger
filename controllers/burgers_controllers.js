@@ -20,9 +20,9 @@ router.get("/", function(request, resp) {
   burger.all(function(data) {
     var hbsObj = {
       burgers: data,
-      // devoured:false
+    
     };
-    // console.log('all:', JSON.stringify(data));
+   
     // rendering the data via handlebars
     resp.render("index", hbsObj);
   });
@@ -34,27 +34,33 @@ router.post("/api/burgers", function(reqSent, rly) {
     rly.redirect("/");
   });
 });
+router.put('/api/burgers/:id', function(req,res){
+  burger.update(req.params.id, function(result){
+    console.log(result, 'burger controller result:');
+    res.sendStatus(200);
+  })
+})
+// why didn't this work???????
+// router.put("/api/burgers/:id", function (req, re) {
+//     var condition = req.params.id + "id";
+//     console.log("condition", condition);
+//     burger.update(
+//         {
+//             devoured: true
+//         },
+//         condition,
+//         function (data) {
+//             if (data.changedRows == 0) {
+//                 re.redirect("/index");
+//                 console.log("update", data);
 
-router.put("/api/burgers/:id", function (req, re) {
-    var condition = req.params.id + "id";
-    console.log("condition", condition);
-    burger.update(
-        {
-            devoured: true
-        },
-        condition,
-        function (data) {
-            if (data.changedRows == 0) {
-                re.redirect("/index");
-                console.log("update", data);
-
-                return re.status(404).end();
-            } else {
-                re.status(200).end();
-            }
-        }
-    );
-});
+//                 return re.status(404).end();
+//             } else {
+//                 re.status(200).end();
+//             }
+//         }
+//     );
+// });
 
 
 module.exports = router;
