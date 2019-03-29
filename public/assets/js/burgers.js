@@ -6,7 +6,7 @@ $(document).ready(function () {
 
         var newBurger = {
             burger_name: $('#newinput').val().trim(),
-            devoured:false
+            devoured: false
         }
 
         $.post('/api/burgers', newBurger, function (data) {
@@ -22,9 +22,9 @@ $(document).ready(function () {
         console.log('id:', id);
 
         $.ajax({
-          method: "PUT",
-          url: '/api/burgers/' + id
-        }).then(function(data) {
+            method: "PUT",
+            url: '/api/burgers/' + id
+        }).then(function (data) {
             console.log('updated devoured state', data);
             location.reload();
         });

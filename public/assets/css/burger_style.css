@@ -9,4 +9,11 @@ img {
 }
 .form-group{
     text-align: center;
+    margin:0 auto;
+}
+li {
+    font-size:22px;
+}
+input {
+    margin:0 auto;
 }

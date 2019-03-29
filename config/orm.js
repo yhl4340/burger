@@ -10,43 +10,39 @@
 // updateOne()/
 
 // importing the connection
-// importing the connection
 var connection = require('../config/connection');
-// setting up a function that will go the mysql commands in order to retrieve info back
-
 
 // orm obj
 var orm = {
-    all: function(table,cb){
-        var queryStr = 'select * from ' + table + ';' ;
-        connection.query(queryStr, function(err, res){
-            if(err) throw err;
+    all: function (table, cb) {
+        var queryStr = 'select * from ' + table + ';';
+        connection.query(queryStr, function (err, res) {
+            if (err) throw err;
             cb(res);
         })
     },
     // insert
-    insert: function(burgerObject, callB){
+    insert: function (burgerObject, callB) {
         console.log('orm:', burgerObject)
         connection.query('insert into burgers set ?',
-        {
-            // wasn't console loggint out name of burger because i had passed in the obj 'burger_name:burgerName
-            burger_name:burgerObject.burger_name,
-        },function(err,resp){
-            if(err) throw err;
-            callB(resp);
-        });
+            {
+                // wasn't console loggint out name of burger because i had passed in the obj 'burger_name:burgerName
+                burger_name: burgerObject.burger_name,
+            }, function (err, resp) {
+                if (err) throw err;
+                callB(resp);
+            });
     },
 
     // update
-    update: function(table, objVals, condition, cb) {
-      connection.query(`update ${table} set ? where ?`, [objVals, condition],
-        function(err,result){
-          if(err) throw err;
-          cb(result);
-      });
+    update: function (table, objVals, condition, cb) {
+        connection.query(`update ${table} set ? where ?`, [objVals, condition],
+            function (err, result) {
+                if (err) throw err;
+                cb(result);
+            });
     }
 };
 
-module.exports= orm;
+module.exports = orm;
 
-module.exports= orm;

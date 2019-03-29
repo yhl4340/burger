@@ -37,18 +37,19 @@ Create a button in index.handlebars that will submit the user input into the dat
 		<div class="jumbotron">
 			<h1>Eat da Burger!!</h1>
 		</div>
-		<div class="row align-items-center">
+		<div class="row align-self-center">
 			{{!-- still confused about the file path --}}
 			<img src="/assets/img/th.jpg"></a>
 		</div>
-
+	
 		<form action='add' method="POST">
-			<div class="form-group ">
+			<div class=" form-group align-self-center">
 				<label for="burger">Add a burger</label>
-				<input type="text" class="form-control" id="newinput">
+				<input type="text" class="form-control" style='width:20%' id="newinput">
 				<button id='addBurger' class='btn btn-primary' type='submit'>Add a burger!!!</button>
 			</div>
 		</form>
+
 </div>
 
 		<div>
