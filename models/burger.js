@@ -12,25 +12,25 @@
 
 
 // requiring the orm in the config folder. './' means current folder. since config and models are sibling, no need to go up one dir?
+// requiring the orm in the config folder. './' means current folder. since config and models are sibling, no need to go up one dir?
 var orm = require('../config/orm.js');
 
 var burger = {
     all: function(cb){
-        orm.all('burgers', function(res){
-            cb(res);
-        })
-    }, 
-    insert:function(burgerName, cb){
-        
-        orm.insert(burgerName, function(res){
-            cb(res);
-        })
+      orm.all('burgers', function(res){
+        cb(res);
+      })
     },
-    update: function(burgerId,cb){
-        var condition = {id:burgerId};
-        var devoured = {devoured:true}
-        orm.update('burgers',devoured, condition, cb)
-        }
-    } 
-
-module.exports = burger;
+    insert:function(burgerName, cb){
+      orm.insert(burgerName, function(res){
+          cb(res);
+      })
+    },
+    update: function(burgerId, cb){
+      var condition = {id: burgerId};
+      var devoured = {devoured: true};
+        orm.update("burgers", devoured, condition, cb);
+    }
+  }
+  
+  module.exports = burger;

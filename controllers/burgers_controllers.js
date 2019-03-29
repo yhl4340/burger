@@ -16,30 +16,29 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 router.get("/", function(request, resp) {
-  //   using the burger.all method and passing data as the argv
   burger.all(function(data) {
     var hbsObj = {
       burgers: data,
-    
     };
-   
-    // rendering the data via handlebars
     resp.render("index", hbsObj);
   });
 });
 
-router.post("/api/burgers", function(reqSent, rly) {
-  console.log('data:', reqSent.body);
-  burger.insert(reqSent.body, function() {
-    rly.redirect("/");
+router.post("/api/burgers", function(req, res) {
+  console.log('data:', req.body);
+  burger.insert(req.body, function() {
+    res.redirect("/");
   });
 });
-router.put('/api/burgers/:id', function(req,res){
-  burger.update(req.params.id, function(result){
-    console.log(result, 'burger controller result:');
+
+router.put("/api/burgers/:id", function(req, res) {
+  burger.update(req.params.id, function(result) {
+    console.log(result);
     res.sendStatus(200);
-  })
-})
+  });
+});
+
+module.exports = router;
 // why didn't this work???????
 // router.put("/api/burgers/:id", function (req, re) {
 //     var condition = req.params.id + "id";

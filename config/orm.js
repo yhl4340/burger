@@ -10,6 +10,7 @@
 // updateOne()/
 
 // importing the connection
+// importing the connection
 var connection = require('../config/connection');
 // setting up a function that will go the mysql commands in order to retrieve info back
 
@@ -30,23 +31,22 @@ var orm = {
         {
             // wasn't console loggint out name of burger because i had passed in the obj 'burger_name:burgerName
             burger_name:burgerObject.burger_name,
-            // need to keep this devoured pro to console log to work bench
-            // devoured:false
         },function(err,resp){
             if(err) throw err;
             callB(resp);
         });
     },
-    // update
 
-    update: function(table, objVals,condition, cb){
-        connection.query('update ${table} set ? where ?', [objVals, condition],
-        function(err,res){
-            if(err) throw err
-            cb(res, 'updates:')
-        })
-        
+    // update
+    update: function(table, objVals, condition, cb) {
+      connection.query(`update ${table} set ? where ?`, [objVals, condition],
+        function(err,result){
+          if(err) throw err;
+          cb(result);
+      });
     }
-}
+};
+
+module.exports= orm;
 
 module.exports= orm;
