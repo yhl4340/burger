@@ -14,19 +14,24 @@
 // Export the ORM object in module.exports.
 
 var mysql = require('mysql');
-var connection = mysql.createConnection(
-    {
-        host:'localhost',
-        password:'12345',
-        port:3306,
-        user:'root',
-        database:'burgers_db'
-    }
-);
-connection.connect(function(err){
-    if(err) {
-        console.error('Error:');
-    }
-    console.log('connected id: '+ connection.threadId)
+var connection;
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: 'localhost',
+    password: '12345',
+    port: 3306,
+    user: 'root',
+    database: 'burgers_db'
+  });
+};
+
+connection.connect(function (err) {
+  if (err) {
+    console.error('Error:');
+  }
+  console.log('connected id: ' + connection.threadId)
 });
 module.exports = connection;
