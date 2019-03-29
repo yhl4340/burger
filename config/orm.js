@@ -40,7 +40,7 @@ var orm = {
     // update
 
     update: function(table, objVals,condition, cb){
-        connection.query('update ${table} set? where?', [objVals, condition],
+        connection.query('update ${table} set ? where ?', [objVals, condition],
         function(err,res){
             if(err) throw err
             cb(res, 'updates:')
