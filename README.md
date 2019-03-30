@@ -5,7 +5,7 @@ Create a restaurant app that lets users input the names of burgers they'd like t
 Each burger in the waiting area also has a Devour it! button. When the user clicks it, the burger will move to the right side of the page.
 Your app will store every burger in a database, whether devoured or not.
 
-## Goal-
+## Goals-
 * - [x] set up folders for config, db, model, controller,           and view.
 * - [x] create directory structure as shown in instruction. 
 * - [x] app captures and display user input in browser
